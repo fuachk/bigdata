@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.diandao.boss.dao.ApiMapper">
+    <select id="getProduct" resultType="map">
+        select b.comtable_id,b.productname name,count(a.order_num) value from business a,comtable b where a.comtable_id=b.comtable_id  group by b.comtable_id,b.productname
+    </select>
+
+    <select id="getTop" resultType="map">
+        select user_area,count(1) cnt from customer group by user_area order by count(1) desc  limit 0,10
+    </select>
+
+    <select id="getMap" resultType="map">
+        select user_area name ,count(1) value from customer group by user_area
+    </select>
+    <select id="getLine"  resultType="int">
+    select count(a.order_num) cnt from business a,comtable b where a.comtable_id=b.comtable_id  and b.productname=#{productname} and DATE_FORMAT(a.s_time,'%Y%m')=#{month}
+    </select>
+</mapper>

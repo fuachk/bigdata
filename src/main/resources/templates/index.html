@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="image/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/element.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/lib/simpleRequire.js"></script>
+    <script src="js/lib/config.js"></script>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/facePrint.js"></script>
+    <script src="js/lib/testHelper.js"></script>
+    <!--    <link rel="stylesheet" href="css/reset.css"/>-->
+    <link rel="stylesheet" href="css/element.css"/>
+</head>
+<body>
+<div id="boss">
+    <template>
+        <el-row :gutter="20">
+            <el-col :span="12">
+                <el-card>
+                    <div id="map"></div>
+                </el-card>
+            </el-col>
+            <el-col :span="12">
+                <el-row>
+                    <el-col :span="24">
+                        <el-card>
+                            <div id="zong"></div>
+                        </el-card>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-card>
+                            <div id="product"></div>
+                        </el-card>
+                    </el-col>
+                </el-row>
+            </el-col>
+        </el-row>
+
+        <el-row>
+            <el-col :span="24">
+                <div id="line"></div>
+            </el-col>
+        </el-row>
+    </template>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>
